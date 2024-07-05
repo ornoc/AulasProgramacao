@@ -1,4 +1,4 @@
-package ExercicoBanco;
+package ExercicioBanco;
 
 public class ContaCorrente extends Conta {
     private float limite;
