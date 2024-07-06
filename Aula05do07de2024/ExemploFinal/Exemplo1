@@ -1,0 +1,18 @@
+package ExemploFinal;
+
+public class Exemplo1 {
+    //Esta declarando uma variavel do tipo FINAL
+    final double numero;
+
+    //Criando uma constante, Ela DEVE receber um valor no momento da declaração
+    //Acesso universal -> public
+    //Existe independente da criação ou injstancia -> stativ
+    //Não pode ser modificada -> FINAL
+    public sattic final double PI = 3.141592653589793;
+
+    //Como não foi definido um valor no momento da declaração, este valor
+    //deverá ser atribuido até o final da construção
+    public Exemplo1(){
+        numero = 10;
+    }
+}
