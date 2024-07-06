@@ -1,0 +1,10 @@
+package ExemploFinal;
+
+//Não é possivel extender uma classe FINAL
+
+//public class Aluno  extends Pessoa{
+//}
+
+public class Aluno{
+
+}
