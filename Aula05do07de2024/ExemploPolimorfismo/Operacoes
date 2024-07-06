@@ -1,0 +1,15 @@
+package ExemploPolimorfismo;
+//exemplo de over lowd sla algo assim
+public class Operacoes {
+    public float soma(int n1, int n2){
+        return n1+n2;
+    }
+    public float soma(int n1, int n2, int n3){
+        return n1+n2+n3;
+    }
+    public String soma(String s1, String s2){
+        return s1+" "+s2;
+    }
+}
+//Diferencia metodo a ser chamado de acordo com as informações fornecidas:
+//EX: se tiver 2 inteiro chama o 1° | 3 Inteiros chama o 2° | 2 String chama o 3°
