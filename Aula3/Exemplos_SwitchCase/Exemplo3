@@ -1,0 +1,25 @@
+package aula3.switchCase;
+
+
+import java.util.Scanner;
+
+
+public class exemplo3 {
+
+
+   public static void main(String[] args){
+
+
+       Scanner ler = new Scanner(System.in);
+
+
+       System.out.println("Digite useu perfil: ");
+       String perfil = ler.next();
+       switch(perfil){
+           case "admin" -> System.out.println("Usuario administrador");
+           case "usuario" -> System.out.println("Usuario padrao");
+           default -> System.out.println("Visitante");
+       }
+   }
+}
+
