@@ -1,0 +1,15 @@
+package vetor;
+
+
+import java.util.Scanner;
+
+
+public class Exemplo3 {
+   public static void main(String[] args) {
+       Scanner ler = new Scanner(System.in);
+       int [] vetor = {1, 2, 3, 4, 6, 10};
+       for (int i : vetor){
+           System.out.print(i+" ");
+       }
+   }
+}
