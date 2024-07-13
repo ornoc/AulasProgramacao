@@ -1,0 +1,24 @@
+package exercicios;
+
+
+import java.util.Scanner;
+
+
+public class Ex8 {
+   public static void main(String[] args){
+       Scanner ler = new Scanner(System.in);
+       System.out.println("Digite os valores de 3 lados de um triangulo: ");
+       int v1 = ler.nextInt();
+       int v2 = ler.nextInt();
+       int v3 = ler.nextInt();
+       if(v1==v2 && v2==v3){
+           System.out.println("O triangulo é equilátero.");
+       }
+       else if(v1==v2 && v3!=v2 || v2==v3 && v3!=v1 || v1==v3 && v2!=v1){
+           System.out.println("O trianfulo é isósceles.");
+       }
+       else{
+           System.out.println("O triangulo é escaleno.");
+       }
+   }
+}
