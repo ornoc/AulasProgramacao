@@ -20,3 +20,27 @@ public class Ex6 {
        }
    }
 }
+/*package exercicios;
+
+
+import java.util.Scanner;
+
+
+public class eX6 {
+   public static void main(String[] args){
+       Scanner ler = new Scanner(System.in);
+       System.out.println("Você deseja converter a temperatura de Celsius para  Fahrenheit ou ao contrário? Digite 'C' para Celsius->Fahrenheit e 'F' para Fahrenheit->Celsius");
+       String resposta = ler.next();
+       if(resposta==C){
+           float F = 1.8*C+32;
+           System.out.println("O grau convertido de celsius para fahrenheit é de: "+F);
+       }
+       else if(resposta==F){
+        float C=(F–32)/1.8;
+           System.out.println("O grau convertido de fahrenheit para celsius é de: "+C);
+       }
+
+
+   }
+}
+*/
