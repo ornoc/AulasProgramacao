@@ -1,0 +1,21 @@
+package exercicios;
+
+
+import java.util.Scanner;
+
+
+public class eX12 {
+   public static void main(String[] args) {
+       Scanner ler = new Scanner(System.in);
+       System.out.println("Digite o código de um produto: ");
+       int codigo = ler.nextInt();
+       switch (codigo) {
+           case 1 -> System.out.println("Caderno");
+           case 2 -> System.out.println("Lápis");
+           case 3 -> System.out.println("Borracha");
+           default -> System.out.println("Diversos");
+       }
+   }
+}
+
+
