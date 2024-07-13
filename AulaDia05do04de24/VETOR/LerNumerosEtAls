@@ -1,0 +1,19 @@
+package vetor;
+
+
+import java.util.Random;
+
+
+public class LerNumerosEtAls {
+   public static void main(String[]args){
+       Random aleatorio = new Random();
+       int numero = aleatorio.nextInt();
+       System.out.println(numero);
+       numero = aleatorio.nextInt(10);
+       System.out.println(numero);
+       numero = aleatorio.nextInt(10, 100);
+       System.out.println(numero);
+       boolean flag = aleatorio.nextBoolean();
+       System.out.println(flag);
+   }
+}
