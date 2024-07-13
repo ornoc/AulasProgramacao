@@ -1,0 +1,21 @@
+RASCUNHO
+package exercicios;
+
+
+import java.util.Scanner;
+
+
+public class Ex11 {
+   public static void main(String[] args){
+       Scanner ler = new Scanner(System.in);
+       System.out.println("Digite o nome e a idade da primeira pessoas: ");
+       String pessoa1 = ler.next();
+       int idade1 = ler.nextInt();
+       System.out.println("Digite o nome e a idade da segunda pessoas: ");
+       String pessoa2 = ler.next();
+       int idade2 = ler.nextInt();
+       if(idade1>idade2){
+           System.out.println(pessoa1+"é mais velha do que"+pessoa2+" "");
+       }
+   }
+}
