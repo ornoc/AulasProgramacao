@@ -1,0 +1,21 @@
+package Aula2.exemplo;
+
+
+import java.util.Scanner;
+
+
+public class Exercicio7 {
+
+
+   public static void main(String[] args){
+       Scanner ler = new Scanner(System.in);
+       System.out.println("Digite sua altura: ");
+       float altura = ler.nextFloat();
+       System.out.println("Digite seu peso: ");
+       float peso = ler.nextFloat();
+       float imc = peso/(altura*altura);
+       System.out.println("Seu IMC é de: "+imc);
+   }
+
+
+}
