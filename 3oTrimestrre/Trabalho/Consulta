@@ -1,0 +1,151 @@
+package Trabalho;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Consulta {
+    private ArrayList<Paciente> pacientes = new ArrayList<>();
+    private Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        Consulta sistema = new Consulta();
+        sistema.menuPrincipal();
+    }
+    public void menuPrincipal() {
+        int opcao = 0;
+
+        do {
+            System.out.println("\n--- Menu de Gerenciamento de Consultas Médicas ---");
+            System.out.println("1. Incluir Paciente");
+            System.out.println("2. Alterar Paciente");
+            System.out.println("3. Realizar Atendimento");
+            System.out.println("4. Listar Pacientes");
+            System.out.println("5. Mostrar Paciente");
+            System.out.println("6. Apagar Paciente");
+            System.out.println("7. Sair");
+            System.out.print("Escolha uma opção: ");
+
+            opcao = Integer.parseInt(scanner.nextLine());
+
+            switch (opcao) {
+                case 1:
+                    incluirPaciente();
+                    break;
+                case 2:
+                    alterarPaciente();
+                    break;
+                case 3:
+                    realizarAtendimento();
+                    break;
+                case 4:
+                    listarPacientes();
+                    break;
+                case 5:
+                    mostrarPaciente();
+                    break;
+                case 6:
+                    apagarPaciente();
+                    break;
+                case 7:
+                    System.out.println("Saindo do sistema...");
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+                    break;
+            }
+        } while (opcao != 7);
+    }
+
+    public void incluirPaciente() {
+        Paciente paciente = new Paciente();
+        System.out.println("Digite o nome do paciente:");
+        paciente.setNome(scanner.nextLine());
+        System.out.println("Digite a data de nascimento (yyyy-mm-dd):");
+        paciente.setDataNascimento(LocalDate.parse(scanner.nextLine()));
+        pacientes.add(paciente);
+        System.out.println("Paciente adicionado com sucesso!");
+    }
+
+    public void alterarPaciente() {
+        System.out.println("Digite o nome do paciente a ser alterado:");
+        String nome = scanner.nextLine();
+        Paciente paciente = buscarPaciente(nome);
+
+        if (paciente != null) {
+            System.out.println("Paciente encontrado. Digite o novo nome:");
+            paciente.setNome(scanner.nextLine());
+            System.out.println("Dados alterados com sucesso.");
+        } else {
+            System.out.println("Paciente não encontrado.");
+        }
+    }
+
+    public void realizarAtendimento() {
+        System.out.println("Digite o nome do paciente para atendimento:");
+        String nome = scanner.nextLine();
+        Paciente paciente = buscarPaciente(nome);
+
+        if (paciente != null) {
+            Atendimento atendimento = new Atendimento();
+            System.out.println("Digite a data do atendimento (yyyy-mm-dd):");
+            atendimento.setData(LocalDate.parse(scanner.nextLine()));
+            System.out.println("Digite a descrição do atendimento:");
+            atendimento.setDescricao(scanner.nextLine());
+            paciente.adicionarConsulta(atendimento);
+            System.out.println("Atendimento registrado com sucesso.");
+        } else {
+            System.out.println("Paciente não encontrado.");
+        }
+    }
+
+    public void listarPacientes() {
+        System.out.println("Lista de Pacientes Ativos:");
+        for (Paciente paciente : pacientes) {
+            System.out.println(paciente.toString());
+        }
+    }
+
+    public void mostrarPaciente() {
+        System.out.println("Digite o nome do paciente para ver os detalhes:");
+        String nome = scanner.nextLine();
+        Paciente paciente = buscarPaciente(nome);
+
+        if (paciente != null) {
+            System.out.println(paciente);
+            System.out.println("Atendimentos:");
+            ArrayList<Atendimento> atendimentos = paciente.getAtendimentos();
+            for (int i = 0; i < atendimentos.size(); i++) {
+                System.out.println(atendimentos.get(i));
+                if ((i + 1) % 5 == 0) {
+                    System.out.println("Pressione Enter para continuar...");
+                    scanner.nextLine();
+                }
+            }
+        } else {
+            System.out.println("Paciente não encontrado.");
+        }
+    }
+
+    public void apagarPaciente() {
+        System.out.println("Digite o nome do paciente para excluir:");
+        String nome = scanner.nextLine();
+        Paciente paciente = buscarPaciente(nome);
+
+        if (paciente != null) {
+            pacientes.remove(paciente);
+            System.out.println("Paciente removido com sucesso.");
+        } else {
+            System.out.println("Paciente não encontrado.");
+        }
+    }
+
+    private Paciente buscarPaciente(String nome) {
+        for (Paciente paciente : pacientes) {
+            if (paciente.getNome().equalsIgnoreCase(nome)) {
+                return paciente;
+            }
+        }
+        return null;
+    }
+}
